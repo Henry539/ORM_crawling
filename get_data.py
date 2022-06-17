@@ -16,5 +16,8 @@ def get_data_by_itemid(itemid: int):
         list_data.append(dict)
     return list_data
 
+list_data = []
+for i in get_data_by_itemid(9805929978):
+    list_data.append(i["historical_sold"])
 
-print(get_data_by_itemid(9805929978))
+print(list_data)
