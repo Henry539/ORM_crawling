@@ -23,12 +23,12 @@ def update_data(itemid, shopid, historical_sold):
     update_item_data(itemid, int(historical_sold))
     print("update!")
 
-list_shope=[[9805929978,120324880],[16474833352,18796445],[18701518960,120324880]]
+list_shope=[[9805929978,120324880],[16474833352,18796445],[18701518960,120324880],[9256605454,317428602],[10412346716,210089851]]
 
 if __name__ == "__main__":
     count = 0
     while True:
-        if count == 5:
+        if count == 2:
             break
         for i in list_shope:
             his_sold = read_shopee(i[0],i[1])
