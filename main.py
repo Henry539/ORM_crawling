@@ -40,11 +40,12 @@ def check(itemid,shopid,num):
     print(f"{num+1}")
     if num == 9:
         return False
-    if read_shopee(itemid, shopid, list_proxy[num]) != -1:
-        his_sold = read_shopee(itemid, shopid, list_proxy[num])
-        update_data(itemid, shopid, his_sold)
-        return True
-    return check(itemid,shopid,num+1)
+    if read_shopee(itemid, shopid, list_proxy[num]) == -1:
+        return check(itemid, shopid, num + 1)
+    his_sold = read_shopee(itemid, shopid, list_proxy[num])
+    update_data(itemid, shopid, his_sold)
+    return True
+
 
 if __name__ == "__main__":
     list_proxy = read_data_txt()
