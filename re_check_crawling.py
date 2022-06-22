@@ -29,7 +29,7 @@ def re_update_data():
 
 def read_data_txt_2():
     proxy_list = []
-    with open('data.txt', 'r') as f:
+    with open('data_proxy.txt', 'r') as f:
         reader = csv.reader(f)
         for row in reader:
             proxy_list.append(row[0])
