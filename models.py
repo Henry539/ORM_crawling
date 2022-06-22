@@ -1,4 +1,3 @@
-
 from sqlalchemy import Boolean, Column, ForeignKey, Integer, String, DateTime
 from sqlalchemy.orm import relationship
 
@@ -35,3 +34,6 @@ class Data_Items(Base):
     HISTORICAL_SOLD = Column(Integer, index=True)
 
     ITEM = relationship("Items", back_populates="DATA")
+
+print("PROCESSING 1 - CONNECT DATABASE: DONE!")
+print("---------------------------------")
