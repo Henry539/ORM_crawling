@@ -58,26 +58,32 @@ def main():
 
 def run(i):
     if check(i[0], i[1], 0):
-        raise print(f"UPDATE! --- {i[0]}")
+        raise print(f"[UPDATE] --- {i[0]}-{i[1]}")
     update_item_data(i[0], None)
     raise print("NON-PROXY_IP CAN USE!")
 
 if __name__ == "__main__":
     list_proxy = read_data_txt_2()
     a = len(list_proxy)
-
+    #CHECK PROXIES LIST WORKING
     main_2()
 
-    # result = run_2(read_data_txt_1(),"85729003","one_shop108")
+    # #GET ITEMID_SHOPID BY API
+    # result = run_2(read_data_txt_1(),"48340714","shopmayanh")
+    # session.commit()
     # print("TOTAL:",len(result),"---FINISHED IN:", time.time()-t1)
 
+    #UPDATE DATA FROM ITEMID_SHOPID
     main()
+    session.commit()
 
-    for i in range(0,4):
+    #RE-CHECK FAIL CRAWLING
+    print("-----RE_CHECK FAIL CRAWLING-----")
+    for i in range(1,4):
         print(f"-----RECHECK_{i}-----")
         main_recheck()
-
     session.commit()
+
     print("PROCESSING ALL-DONE IN:", time.time() - t)
     print("-----------END-----------")
 

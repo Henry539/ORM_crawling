@@ -66,7 +66,7 @@ def main_recheck():
 
 def run(i):
     if check(i[0], i[1], 0,i[2]):
-        raise print(f"RE-UPDATE! --- {i[0]}")
+        raise print(f"[RE-UPDATE] --- {i[0]}---{i[1]}")
     update_item_data(i[0], None)
     raise print("NON-PROXY_IP CAN USE!")
 

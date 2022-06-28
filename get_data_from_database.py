@@ -3,6 +3,7 @@ from database import engine
 
 connection = engine.connect()
 
+
 def get_data_by_itemid(itemid: int):
     query = f"SELECT ITEM_ID, TIME, HISTORICAL_SOLD FROM DATA_ITEMS WHERE ITEM_ID = {itemid}"
     result = connection.execute(query)
